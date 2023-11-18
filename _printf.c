@@ -7,11 +7,7 @@
  */
 int _printf(const char *format, ...)
 {
-char c_unint[50];
-int len_int;
-unsigned int un_int;
-char c_int[50];
-int integer;
+
 va_list ptr;
 int s_len;
 int c_len;
@@ -28,7 +24,7 @@ while (*format)
                 write(1, format, 1);
                 c_len++;
         }
-    
+
 else
         {
                 format++;
@@ -56,26 +52,10 @@ else
                         write(1, str, s_len);
                         c_len += s_len;
                 }
-                else if (*format == 'd')
-                {
-                        integer = va_arg(ptr, int);
-                        _itoa(integer,c_int);    
-                        len_int = _strlen(c_int);
-                        write(1, c_int,len_int);
-			
-                }
-                else if (*format == 'i')
-                {
-                        un_int = va_arg(ptr,unsigned int);
-                        _itoa(un_int,c_unint);    
-                        len_int =_strlen(c_unint); 
-                        write(1, c_unint, len_int);
-			
-                }
         }
-        format++;
-}                                                                                                                                                                                                                                                                                                                                                                                           
-va_end(ptr);                                                                                                                                                                                                                                                                                                                                                                                
-return (c_len);                                                                                                                                                                                                                                                                                                                                                                             
-}
+        format++;                                                                                                                                                                                                                                                                                                            
+}                                                                                                                                                                                                                                                                                                                            
+va_end(ptr);                                                                                                                                                                                                                                                                                                                 
+return (c_len);                                                                                                                                                                                                                                                                                                              
+}     
  
