@@ -62,6 +62,7 @@ else
                         _itoa(integer,c_int);    
                         len_int = _strlen(c_int);
                         write(1, c_int,len_int);
+			c_len += len_int;
                 }
                 else if (*format == 'i')
                 {
@@ -69,6 +70,7 @@ else
                         _itoa(un_int,c_unint);    
                         len_int =_strlen(c_unint); 
                         write(1, c_unint, len_int);
+			c_len += len_int;
                 }
         }
         format++;
